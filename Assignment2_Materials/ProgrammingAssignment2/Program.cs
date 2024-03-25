@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Data;
 using LinkedLists;
 
 namespace ProgrammingAssignment2
@@ -34,7 +35,21 @@ namespace ProgrammingAssignment2
 				// course add more space between the
 				// comments as needed
 
-
+				int value = GetValue();
+				int numberCount =0;
+				int numberSum =0;
+				decimal mean = 0m;
+				while (value != -1)
+				{
+					numberCount++;
+					numberSum = value + numberSum;
+					value = GetValue();
+				}
+				if (numberCount > 0) 
+				{
+					mean = Convert.ToDecimal(numberSum) / numberCount;
+				}
+				Console.WriteLine(numberCount + " " + mean);
 
 				// Don't add or modify any code below
 				// this comment
